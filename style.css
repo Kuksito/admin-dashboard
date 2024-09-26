@@ -14,6 +14,7 @@
     --bg-color:#f0f9ff;
     --card-color: #fff;
     --point-color: #cb1650;
+    --shadow-color: #c9d5dd;
 
 }
 
@@ -51,7 +52,7 @@ p, h1, h2, h3, h4{
     grid-column: 2 / 4;
     grid-template-columns: 2fr 1fr;
     padding: 20px 40px;
-    box-shadow: 2px 3px 10px #c9d5dd;
+    box-shadow: 2px 3px 10px var(--shadow-color);
     z-index: 3;
 }
 
@@ -274,12 +275,14 @@ p, h1, h2, h3, h4{
     grid-column: 2 / span 2;
     grid-template-columns: 3fr 1fr;
     background-color: var(--bg-color);
+    padding-bottom: 100px;
 }
 
 .main{
     display: grid;
     grid-template-columns: repeat(2, minmax(250px, 1fr));
     grid-template-rows: min-content;
+    grid-auto-rows: auto;
     gap: 25px;
     padding: 30px 15px 15px 40px;
 }
@@ -290,7 +293,7 @@ p, h1, h2, h3, h4{
 .main .card, .other-stuff .news-wrapper, .other-stuff .trending-profiles{
     background-color: var(--card-color);
     border-radius: 10px;
-    box-shadow: 1px 3px 8px #b8c3cb;
+    box-shadow: 1px 3px 8px var(--shadow-color);
     padding: 30px 35px 20px 30px;
 }
 
@@ -301,7 +304,7 @@ p, h1, h2, h3, h4{
 
 .card .icons{
     display: grid;
-    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-columns: repeat(3, 0.07fr);
     justify-content: end;
     gap: 30px;
     align-items: end;
@@ -323,18 +326,38 @@ p, h1, h2, h3, h4{
     display: grid;
     grid-template-rows: min-content;
     align-items: end;
-    padding: 30px 39px 15px 15px;
+    padding: 40px 39px 15px 15px;
 }
 
 .announcement-title, .trending-title{
     margin-bottom: 15px;
 }
 
+.other-wrapper{
+    margin-bottom: 40px;
+}
+
+.news{
+    min-height: 10vh;
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+.news:nth-child(n+2){
+    margin-top: 20px;
+}
+
+.news-title{
+    margin-bottom: 20px;
+}
+
 .news-text{
-    width: 14vw;
+    display: -webkit-box;
+    max-width: 12vw;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    margin-bottom: 10px;
 }
 
 .trending-profiles .trending-profile:not(:first-child){
@@ -356,4 +379,18 @@ p, h1, h2, h3, h4{
 
 .trending-photo{
     grid-row: 1 / span 2;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / span 2;
+    padding: 9px 0;
+    font-size: 1.2rem;
+    background-color: #d7e7f4;
+}
+
+.span{
+    margin-right: 7px;
+    font-size: 1rem;
 }
