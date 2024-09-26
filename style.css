@@ -13,6 +13,8 @@
     --main-color:#22d3ee;
     --bg-color:#f0f9ff;
     --card-color: #fff;
+    --point-color: #cb1650;
+
 }
 
 body{
@@ -87,6 +89,7 @@ p, h1, h2, h3, h4{
     border: none;
     border-radius: 20px;
     background-color: var(--bg-color);
+    cursor: pointer;
 }
 
 .side-profile, .btns{
@@ -107,6 +110,14 @@ p, h1, h2, h3, h4{
     border: none;
     background: none;
     width: 28px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+.notification-btn:hover{
+    transform: scale(1.2);
+    fill: var(--point-color);
 }
 
 .profile-img-sm{
@@ -157,11 +168,17 @@ p, h1, h2, h3, h4{
     background-color: var(--main-color);
     color: var(--card-color);
     border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     font-size: 1.2rem;
     font-weight: 600;
     width: 6vw;
-    height: 4vh;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: var(--point-color);
 }
 
 .sidebar{
@@ -240,15 +257,22 @@ p, h1, h2, h3, h4{
     color: var(--card-color);
     font-weight: bold;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav-item, .settings-item{
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+.nav-item:hover, .settings-item:hover{
+    transform: scale(1.1);
 }
 
 .main-other-wrapper{
     display: grid;
     grid-column: 2 / span 2;
     grid-template-columns: 3fr 1fr;
-}
-
-.main, .other-stuff{
     background-color: var(--bg-color);
 }
 
@@ -267,8 +291,32 @@ p, h1, h2, h3, h4{
     background-color: var(--card-color);
     border-radius: 10px;
     box-shadow: 1px 3px 8px #b8c3cb;
-    padding: 30px 20px 20px 30px;
-    
+    padding: 30px 35px 20px 30px;
+}
+
+.card{
+    display: grid;
+    border-left: 10px solid var(--point-color);
+}
+
+.card .icons{
+    display: grid;
+    grid-template-columns: repeat(3, 0.1fr);
+    justify-content: end;
+    gap: 30px;
+    align-items: end;
+}
+
+.card-icon{
+    width: 1rem;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.card-icon:hover{
+    transform: scale(1.2);
+    fill: var(--point-color);
 }
 
 .other-stuff{
